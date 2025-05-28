@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.theme-waunakee {
+  --primary-color: theme('colors.tan.600');
+  --primary-hover: theme('colors.tan.700');
+  --secondary-color: theme('colors.warmGray.100');
+  --accent-color: theme('colors.tan.200');
+  --text-color: theme('colors.warmGray.600');
+}
+
+.theme-sun-prairie {
+  --primary-color: theme('colors.teal.600');
+  --primary-hover: theme('colors.teal.700');
+  --secondary-color: theme('colors.teal.100');
+  --accent-color: theme('colors.teal.200');
+  --text-color: theme('colors.teal.600');
+}
+
+@layer utilities {
+  .bg-theme-primary { background-color: var(--primary-color); }
+  .bg-theme-primary-hover { background-color: var(--primary-hover); }
+  .bg-theme-secondary { background-color: var(--secondary-color); }
+  .bg-theme-accent { background-color: var(--accent-color); }
+  .text-theme-primary { color: var(--primary-color); }
+  .text-theme-accent { color: var(--accent-color); }
+  .text-theme-text { color: var(--text-color); }
+  .hover\:bg-theme-primary-hover:hover { background-color: var(--primary-hover); }
+  .hover\:text-theme-primary:hover { color: var(--primary-color); }
+  .border-theme-primary { border-color: var(--primary-color); }
+  .border-theme-accent { border-color: var(--accent-color); }
+}
+
+/* Fixed header styles */
+.fixed-header {
+  @apply fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm;
+}
+
+/* Navigation styles */
+.nav-link {
+  @apply text-gray-700 transition-colors hover:text-theme-primary;
+}
+
+.nav-button {
+  @apply bg-theme-primary text-white px-6 py-2 rounded-full hover:bg-theme-primary-hover transition-colors;
+}
+
+@keyframes pulse-opacity {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.react-datepicker-wrapper {
+  width: 100% !important;
+}
